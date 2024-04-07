@@ -1,0 +1,5 @@
+- **brew** tap homebrew/cask-versions
+- **brew** install --cask virtualbox6
+- **brew** install minikube docker
+- **minikube** start --driver=virtualbox --keep-context
+- **eval**\$(**minikube** docker-env**)**
