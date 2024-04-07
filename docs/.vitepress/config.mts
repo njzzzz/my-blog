@@ -64,7 +64,7 @@ export default defineConfig({
       }),
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/njzzzz/uni-mp-form" },
+      { icon: "github", link: "https://njzzzz-blog.pages.dev/" },
     ],
   },
 });
