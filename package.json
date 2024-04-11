@@ -4,7 +4,7 @@
     "name": "njzzzz"
   },
   "repository": {
-    "url": "https://njzzzz-blog.pages.dev/"
+    "url": "https://github.com/njzzzz/njzzzz-blog"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",
