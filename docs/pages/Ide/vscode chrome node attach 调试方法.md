@@ -1,4 +1,4 @@
-# vscode `chrome/node` attach 调试方法.md
+# vscode `chrome/node` attach 调试方法，保留用户数据和插件，但窗口，多项目调试
 
 ## Node Attcah
 1. 配置`.vscode/launch.json`
