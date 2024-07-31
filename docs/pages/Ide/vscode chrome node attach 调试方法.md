@@ -36,7 +36,7 @@
 
 4. 点击vscode debug 选项，选中debugger:services，再选中第二步启动的进程
 
-## Chrome Attach
+## Chrome Attach  【配置完成后关闭所有chrome进程，windows可通过任务管理器关闭，然后点击快捷方式重新打开chrome】
 
 1. 修改chrome启动参数，增加`--remote-debugging-port=9229` （指定调试端口）`--user-data-dir=your user data`（指定使用的用户数据，以保证插件等环境完整）
     - win 
