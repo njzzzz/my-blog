@@ -24,4 +24,5 @@ mkcert --CAROOT
 ```
 ![alt text](image.png)
 ![alt text](image-1.png)
-12. [ditto](https://ditto-cp.sourceforge.io/)
+
+12. [剪切板工具ditto](https://ditto-cp.sourceforge.io/)
