@@ -26,3 +26,7 @@ mkcert --CAROOT
 ![alt text](image-1.png)
 
 12. [剪切板工具ditto](https://ditto-cp.sourceforge.io/)
+13. [学习用激活工具win](https://github.com/zbezj/HEU_KMS_Activator/releases/download/42.0.4/HEU_KMS_Activator_v42.0.4.rar)
+14. [学习用激活工具jetb](https://github.com/njzzzz/Jetbrains-Help)
+15. [pws美化工具](https://starship.rs/zh-CN/guide/)
+16. [win版本互转](https://github.com/TGSAN/CMWTAT_Digital_Edition/releases)
