@@ -11,6 +11,12 @@
     win + r services.msc 找到memurai服务手动关闭
 8. [WindowsTernimal](https://github.com/microsoft/terminal)
 9. [powershell7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4&viewFallbackFrom=powershell-7&WT.mc_id=THOMASMAURER-blog-thmaure)
+
+    设置ctrl + arrow 移动单词设置 
+    ```
+    Set-PSReadLineKeyHandler -Chord Ctrl+LeftArrow BackwardWord
+    Set-PSReadLineKeyHandler -Chord Ctrl+RightArrow ForwardWord
+    ```
 10. java android 环境使用idea android studio
 11. [开发环境下的https安全证书](https://github.com/FiloSottile/mkcert)
 ```bash
