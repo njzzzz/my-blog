@@ -10,7 +10,7 @@ Get-PSReadlineKeyHandler
 $PROFILE
 // 加入这两行
 Get-PSReadLineOption
-Get-PSReadlineKeyHandler
+Get-PSReadlineKeyHandler 
 ```
 ### 切换语言
 ```ps1
