@@ -9,8 +9,8 @@ Get-PSReadlineKeyHandler
 // 获取配置文件
 $PROFILE
 // 加入这两行
-Get-PSReadLineOption
-Get-PSReadlineKeyHandler 
+Set-PSReadlineKeyHandler -Chord Ctrl+LeftArrrow BackwardWord
+Set-PSReadlineKeyHandler -Chord Ctrl+RightArrrow ForwardWord
 ```
 ### 切换语言
 ```ps1
