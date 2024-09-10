@@ -36,3 +36,4 @@ mkcert --CAROOT
 14. [学习用激活工具jetb](https://github.com/njzzzz/Jetbrains-Help)
 15. [pws美化工具](https://starship.rs/zh-CN/guide/)
 16. [win版本互转](https://github.com/TGSAN/CMWTAT_Digital_Edition/releases)
+17. [截图工具](https://www.snipaste.com/)
