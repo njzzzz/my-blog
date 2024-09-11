@@ -37,3 +37,4 @@ mkcert --CAROOT
 15. [pws美化工具](https://starship.rs/zh-CN/guide/)
 16. [win版本互转](https://github.com/TGSAN/CMWTAT_Digital_Edition/releases)
 17. [截图工具](https://www.snipaste.com/)
+18. [windows devtools 集合](https://learn.microsoft.com/en-us/windows/dev-environment/)
