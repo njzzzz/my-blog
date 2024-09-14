@@ -38,3 +38,101 @@ mkcert --CAROOT
 16. [win版本互转](https://github.com/TGSAN/CMWTAT_Digital_Edition/releases)
 17. [截图工具](https://www.snipaste.com/)
 18. [windows devtools 集合](https://learn.microsoft.com/en-us/windows/dev-environment/)
+
+
+## 浏览器插件
+
+### Locatorjs
+
+#### 配置
+
+1. vsocde
+
+    需要自己在file后加上`/`
+
+    ```bash
+    vscode://file/${projectPath}${filePath}:${line}:${column}
+    ```
+2. webstorm
+
+    webstorm使用如下命令可以打开文件
+
+    ```bash
+    webstorm64.exe --line linenumber --column columnnumber ${filepath}
+    ```
+
+> 修复webstorm使用toolbox安装可能没有注册urlschema导致无法打开
+
+1. 新建文件夹 `C:/Registry`
+
+2. 创建文件 `webstorm_open_schema.ps1` 用于解析路径
+
+    ```ps1
+    param (
+        [string]$url
+    )
+    # Initialize variables
+    $file = ""
+    $line = ""
+    $column = ""
+
+    # Extract file parameter
+    if ($url -match "file=([^&]+)") {
+        $file = $matches[1]
+    }
+
+    # Extract line parameter
+    if ($url -match "line=([^&]+)") {
+        $line = $matches[1]
+    }
+
+    # Extract column parameter
+    if ($url -match "column=([^&]+)") {
+        $column = $matches[1]
+    }
+
+    # Remove URL encoding from the file path if necessary
+    $file = [System.Uri]::UnescapeDataString($file)
+
+    # Display extracted values for debugging (optional)
+    Write-Host "File: $file"
+    Write-Host "Line: $line"
+    Write-Host "Column: $column"
+
+    # Ensure WebStorm is installed at this path
+    # ！！！！自行修改此处的路径
+    $webstormPath = "C:\Users\gz_nj\AppData\Local\Programs\WebStorm\bin\webstorm64.exe"
+
+    # Call WebStorm with the extracted parameters
+    Start-Process "$webstormPath" "--line $line --column $column `"$file`""
+
+    ```
+
+3. 创建文件 `run_webstorm_open.vbs` 用于在后台执行ps1脚本
+
+    ```vbs
+    Set objShell = CreateObject("WScript.Shell")
+    objShell.Run "powershell -ExecutionPolicy Bypass -File ""C:\Registry\webstorm_open_schema.ps1"" """ & WScript.Arguments(0) & """", 0, False
+    ```
+
+4. 创建注册表文件 `webstorm_open.reg` 用于支持 url schema
+
+    ```reg
+    Windows Registry Editor Version 5.00
+
+    [HKEY_CLASSES_ROOT\webstorm]
+    @="URL:WebStorm Protocol"
+    "URL Protocol"=""
+
+    [HKEY_CLASSES_ROOT\webstorm\DefaultIcon]
+    ！！！！自行修改此处的路径
+    @="C:\\Users\\gz_nj\\AppData\\Local\\Programs\\WebStorm\\bin\\webstorm64.exe,1"
+
+    [HKEY_CLASSES_ROOT\webstorm\shell]
+
+    [HKEY_CLASSES_ROOT\webstorm\shell\open]
+
+    [HKEY_CLASSES_ROOT\webstorm\shell\open\command]
+    @="wscript \"C:\\Registry\\run_webstorm_open.vbs\" \"%1\""
+
+    ```
